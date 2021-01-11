@@ -8,6 +8,8 @@
     {{- __('title.category') + page_title_suffix }}
   {%- elif page.type === 'tags' and not page.title %}
     {{- __('title.tag') + page_title_suffix }}
+  {%- elif page.type === 'photos' and not page.title %}
+    {{- __('title.photos') + page_title_suffix }}
   {%- elif page.type === 'schedule' and not page.title %}
     {{- __('title.schedule') + page_title_suffix }}
   {%- else %}
@@ -53,6 +55,8 @@
               {{ list_categories() }}
             </div>
           </div>
+        {% elif page.type === 'photos' %}
+          <div class="ImageGrid"></div>
         {% elif page.type === 'schedule' %}
           <div class="event-list">
           </div>
